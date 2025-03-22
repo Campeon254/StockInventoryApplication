@@ -13,7 +13,6 @@ public class SignUp extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         idnumber = new javax.swing.JLabel();
         username = new javax.swing.JLabel();
         password = new javax.swing.JLabel();
@@ -28,17 +27,24 @@ public class SignUp extends javax.swing.JFrame {
         role_TF = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SIGN UP");
 
-        jLabel1.setText("SIGN UP PORTAL");
+        jPanel1.setBackground(new java.awt.Color(221, 221, 221));
 
+        idnumber.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         idnumber.setText("ID NUMBER: ");
 
+        username.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         username.setText("USERNAME:");
 
+        password.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         password.setText("PASSWORD:");
 
+        confirm_password.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         confirm_password.setText("CONFIRM PASSWORD:");
 
+        signup_BT.setBackground(new java.awt.Color(102, 255, 0));
+        signup_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         signup_BT.setText("SIGN UP");
         signup_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,6 +52,8 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        cancel_BT.setBackground(new java.awt.Color(255, 0, 0));
+        cancel_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         cancel_BT.setText("CANCEL");
         cancel_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +61,7 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        role.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         role.setText("ROLE:");
 
         role_TF.addActionListener(new java.awt.event.ActionListener() {
@@ -66,42 +75,40 @@ public class SignUp extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(password)
+                            .addComponent(role))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(password_PF, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(role_TF)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(confirm_password)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addComponent(confirm_password_PF, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(idnumber)
-                            .addComponent(username)
-                            .addComponent(password)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(signup_BT))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(role))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(confirm_password)))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cancel_BT)
-                        .addGap(0, 26, Short.MAX_VALUE))
-                    .addComponent(confirm_password_PF)
-                    .addComponent(password_PF)
-                    .addComponent(role_TF, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(username_TF)
-                    .addComponent(idnumber_TF))
+                            .addComponent(username))
+                        .addGap(117, 117, 117)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(username_TF)
+                            .addComponent(idnumber_TF))))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(signup_BT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancel_BT)
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idnumber)
                     .addComponent(idnumber_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -115,17 +122,17 @@ public class SignUp extends javax.swing.JFrame {
                     .addComponent(role_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(password_PF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(password))
+                    .addComponent(password)
+                    .addComponent(password_PF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirm_password_PF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(confirm_password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                    .addComponent(confirm_password)
+                    .addComponent(confirm_password_PF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancel_BT)
-                    .addComponent(signup_BT))
-                .addGap(26, 26, 26))
+                    .addComponent(signup_BT)
+                    .addComponent(cancel_BT))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -135,7 +142,7 @@ public class SignUp extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +156,9 @@ public class SignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancel_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_BTActionPerformed
-        System.exit(0);
+        new Login().setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_cancel_BTActionPerformed
 
     private void signup_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_BTActionPerformed
@@ -173,7 +182,6 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JPasswordField confirm_password_PF;
     private javax.swing.JLabel idnumber;
     private javax.swing.JTextField idnumber_TF;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel password;
     private javax.swing.JPasswordField password_PF;

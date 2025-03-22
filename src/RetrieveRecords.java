@@ -64,6 +64,9 @@ public class RetrieveRecords extends javax.swing.JFrame {
         back_BT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("STOCK RECORDS");
+
+        jPanel1.setBackground(new java.awt.Color(221, 221, 221));
 
         search_TF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +74,8 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
+        search_BT.setBackground(new java.awt.Color(102, 255, 0));
+        search_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         search_BT.setText("SEARCH");
         search_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,14 +83,19 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
+        id.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         id.setText("PRODUCT ID:");
 
+        name.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         name.setText("PRODUCT NAME:");
 
+        category.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         category.setText("PRODUCT CATEGORY:");
 
+        quantity.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         quantity.setText("PRODUCT QUANTITY:");
 
+        price.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         price.setText("PRODUCT PRICE:");
 
         id_TF.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +104,8 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
+        update_BT.setBackground(new java.awt.Color(102, 255, 102));
+        update_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         update_BT.setText("UPDATE");
         update_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +113,8 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
+        delete_BT.setBackground(new java.awt.Color(255, 51, 51));
+        delete_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         delete_BT.setText("DELETE");
         delete_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +122,8 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
+        records_BT.setBackground(new java.awt.Color(51, 204, 255));
+        records_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         records_BT.setText("SHOW RECORDS");
         records_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +131,8 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
+        print_BT.setBackground(new java.awt.Color(51, 204, 255));
+        print_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         print_BT.setText("PRINT RECORDS");
         print_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +163,8 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(stocktable);
 
+        back_BT.setBackground(new java.awt.Color(255, 51, 0));
+        back_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         back_BT.setText("BACK");
         back_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,13 +177,9 @@ public class RetrieveRecords extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(search_BT))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(id)
                             .addComponent(name)
@@ -171,31 +187,32 @@ public class RetrieveRecords extends javax.swing.JFrame {
                             .addComponent(quantity)
                             .addComponent(price)
                             .addComponent(update_BT)
-                            .addComponent(records_BT))
+                            .addComponent(records_BT)
+                            .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(price_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(quantity_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(category_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(name_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(id_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(print_BT)
-                            .addComponent(delete_BT))))
+                            .addComponent(search_BT)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(print_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(delete_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(id_TF)
+                                .addComponent(name_TF)
+                                .addComponent(category_TF)
+                                .addComponent(quantity_TF)
+                                .addComponent(price_TF))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(back_BT)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(back_BT)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -227,10 +244,11 @@ public class RetrieveRecords extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(records_BT)
-                            .addComponent(print_BT))))
-                .addGap(18, 18, 18)
-                .addComponent(back_BT)
-                .addContainerGap(127, Short.MAX_VALUE))
+                            .addComponent(print_BT))
+                        .addGap(18, 18, 18)
+                        .addComponent(back_BT))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -240,14 +258,14 @@ public class RetrieveRecords extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -329,7 +347,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
     }
 
     private void records() {
-        try {
+            try {
             myconnection();
             DefaultTableModel model= (DefaultTableModel)stocktable.getModel();
             model.setRowCount(0);
@@ -343,9 +361,9 @@ public class RetrieveRecords extends javax.swing.JFrame {
                 };
                 model.addRow(mydata);
             }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error retrieving records" +ex.getMessage());
-        }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error retrieving records" +ex.getMessage());
+            }
     }
     
     private void getrecords(){
@@ -371,33 +389,36 @@ public class RetrieveRecords extends javax.swing.JFrame {
     }
 
     private void update() {
-        try {
-            String id = id_TF.getText();
-            String name = name_TF.getText();
-            String category = category_TF.getText();
-            String quantity = quantity_TF.getText();
-            String price = price_TF.getText();
-            
-            pdst=cn.prepareStatement("UPDATE stockinventorytb SET NAME=?, CATEGORY=?, QUANTITY=?, PRICE=? WHERE ID=?");
-            pdst.setString(1, name);
-            pdst.setString(2, category);
-            pdst.setString(3, quantity);
-            pdst.setString(4, price);
-            pdst.setString(5, id);
-            
-            int updatedrow = pdst.executeUpdate();
-            if(updatedrow>0){
-                JOptionPane.showMessageDialog(null, "Records Updated Successfully");
-            }else{
-                JOptionPane.showMessageDialog(null, "Error updating records");
+        int confirmmessage = JOptionPane.showConfirmDialog(null, "Are you sure you want to update this record", "This action cannot be undone", JOptionPane.YES_NO_OPTION);
+        if(confirmmessage == JOptionPane.YES_OPTION){
+            try {
+                String id = id_TF.getText();
+                String name = name_TF.getText();
+                String category = category_TF.getText();
+                String quantity = quantity_TF.getText();
+                String price = price_TF.getText();
+
+                pdst=cn.prepareStatement("UPDATE stockinventorytb SET NAME=?, CATEGORY=?, QUANTITY=?, PRICE=? WHERE ID=?");
+                pdst.setString(1, name);
+                pdst.setString(2, category);
+                pdst.setString(3, quantity);
+                pdst.setString(4, price);
+                pdst.setString(5, id);
+
+                int updatedrow = pdst.executeUpdate();
+                if(updatedrow>0){
+                    JOptionPane.showMessageDialog(null, "Records Updated Successfully");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Error updating records");
+                }
+
+
+            } catch (SQLException ex) {
+                Logger.getLogger(RetrieveRecords.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(RetrieveRecords.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        }else{
+            JOptionPane.showMessageDialog(null, "Update cancelled");
+        } 
     }
 
     private void delete() {

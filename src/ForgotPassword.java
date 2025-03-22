@@ -24,13 +24,21 @@ public class ForgotPassword extends javax.swing.JFrame {
         confirmpassword_PF = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CHANGE PASSWORD");
 
+        jPanel1.setBackground(new java.awt.Color(221, 221, 221));
+
+        idnumber.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         idnumber.setText("ID NUMBER: ");
 
+        password.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         password.setText("PASSWORD");
 
+        confirmpassword.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         confirmpassword.setText("CONFIRM PASSWORD: ");
 
+        changepassword_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        changepassword_BT.setForeground(new java.awt.Color(102, 255, 0));
         changepassword_BT.setText("CHANGE PASSWORD");
         changepassword_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -38,7 +46,9 @@ public class ForgotPassword extends javax.swing.JFrame {
             }
         });
 
-        exit_BT.setText("EXIT");
+        exit_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        exit_BT.setForeground(new java.awt.Color(255, 51, 51));
+        exit_BT.setText("BACK");
         exit_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exit_BTActionPerformed(evt);
@@ -51,19 +61,21 @@ public class ForgotPassword extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(changepassword_BT)
-                    .addComponent(exit_BT)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(changepassword_BT)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addComponent(exit_BT))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(idnumber)
                             .addComponent(password)
                             .addComponent(confirmpassword))
-                        .addGap(97, 97, 97)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(idnumber_Tf)
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(idnumber_Tf, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                             .addComponent(password_PF)
-                            .addComponent(confirmpassword_PF, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))))
+                            .addComponent(confirmpassword_PF))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -82,10 +94,10 @@ public class ForgotPassword extends javax.swing.JFrame {
                     .addComponent(confirmpassword)
                     .addComponent(confirmpassword_PF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(changepassword_BT)
-                .addGap(18, 18, 18)
-                .addComponent(exit_BT)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(changepassword_BT)
+                    .addComponent(exit_BT))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -102,7 +114,7 @@ public class ForgotPassword extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,7 +125,9 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_changepassword_BTActionPerformed
 
     private void exit_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_BTActionPerformed
-        System.exit(0);
+        new Login().setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_exit_BTActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {

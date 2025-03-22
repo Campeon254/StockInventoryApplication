@@ -15,7 +15,6 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        title = new javax.swing.JLabel();
         idnumber = new javax.swing.JLabel();
         password = new javax.swing.JLabel();
         idnumber_TF = new javax.swing.JTextField();
@@ -26,13 +25,18 @@ public class Login extends javax.swing.JFrame {
         forgotpassword_BT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LOGIN PAGE");
 
-        title.setText("LOG IN WINDOW");
+        jPanel1.setBackground(new java.awt.Color(221, 221, 221));
 
+        idnumber.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         idnumber.setText("ID NUMBER:");
 
-        password.setText("PASSWORD");
+        password.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        password.setText("PASSWORD:");
 
+        login_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        login_BT.setForeground(new java.awt.Color(255, 0, 51));
         login_BT.setText("LOGIN");
         login_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -40,6 +44,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        signup_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        signup_BT.setForeground(new java.awt.Color(102, 255, 0));
         signup_BT.setText("SIGN UP");
         signup_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,6 +53,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        exit_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        exit_BT.setForeground(new java.awt.Color(255, 0, 51));
         exit_BT.setText("EXIT");
         exit_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +62,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        forgotpassword_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        forgotpassword_BT.setForeground(new java.awt.Color(102, 255, 0));
         forgotpassword_BT.setText("FORGOT PASSWORD?");
         forgotpassword_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,31 +80,28 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(forgotpassword_BT)
-                                    .addComponent(exit_BT))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(signup_BT)
-                                    .addComponent(login_BT))))
-                        .addContainerGap(48, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idnumber)
-                            .addComponent(password))
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(password_PF, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(password_PF, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
                             .addComponent(idnumber_TF))
-                        .addGap(34, 34, 34))))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(exit_BT)
+                            .addComponent(signup_BT))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(login_BT, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(forgotpassword_BT)
+                                .addContainerGap())))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(title)
-                .addGap(18, 18, 18)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idnumber)
                     .addComponent(idnumber_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -105,12 +112,12 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(login_BT)
-                    .addComponent(forgotpassword_BT))
-                .addGap(18, 18, 18)
+                    .addComponent(signup_BT))
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(signup_BT)
-                    .addComponent(exit_BT))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(exit_BT)
+                    .addComponent(forgotpassword_BT))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,7 +134,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -166,7 +173,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel password;
     private javax.swing.JPasswordField password_PF;
     private javax.swing.JButton signup_BT;
-    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 
     //establish connection with mysql
