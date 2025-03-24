@@ -113,7 +113,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
-        delete_BT.setBackground(new java.awt.Color(255, 51, 51));
+        delete_BT.setBackground(new java.awt.Color(255, 51, 0));
         delete_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
         delete_BT.setText("DELETE");
         delete_BT.addActionListener(new java.awt.event.ActionListener() {
@@ -177,35 +177,34 @@ public class RetrieveRecords extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(id)
-                            .addComponent(name)
-                            .addComponent(category)
-                            .addComponent(quantity)
-                            .addComponent(price)
-                            .addComponent(update_BT)
-                            .addComponent(records_BT)
-                            .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(search_BT)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(print_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(delete_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(id_TF)
-                                .addComponent(name_TF)
-                                .addComponent(category_TF)
-                                .addComponent(quantity_TF)
-                                .addComponent(price_TF))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(back_BT)))
+                    .addComponent(id)
+                    .addComponent(name)
+                    .addComponent(category)
+                    .addComponent(quantity)
+                    .addComponent(price)
+                    .addComponent(update_BT)
+                    .addComponent(records_BT)
+                    .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(search_BT)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(print_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(delete_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(id_TF)
+                        .addComponent(name_TF)
+                        .addComponent(category_TF)
+                        .addComponent(quantity_TF)
+                        .addComponent(price_TF)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addComponent(back_BT)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,10 +243,10 @@ public class RetrieveRecords extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(records_BT)
-                            .addComponent(print_BT))
-                        .addGap(18, 18, 18)
-                        .addComponent(back_BT))
+                            .addComponent(print_BT)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(back_BT)
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
