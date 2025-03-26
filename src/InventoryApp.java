@@ -36,10 +36,10 @@ public class InventoryApp extends javax.swing.JFrame {
         id.setText("PRODUCT ID:");
 
         name.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        name.setText("PRODUCT NAME:");
+        name.setText("PRODUCT CATEGORY:");
 
         category.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        category.setText("PRODUCT CATEGORY:");
+        category.setText("PRODUCT NAME:");
 
         quantity.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         quantity.setText("PRODUCT QUANTITY:");
