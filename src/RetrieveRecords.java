@@ -57,11 +57,15 @@ public class RetrieveRecords extends javax.swing.JFrame {
         price_TF = new javax.swing.JTextField();
         update_BT = new javax.swing.JButton();
         delete_BT = new javax.swing.JButton();
-        records_BT = new javax.swing.JButton();
-        print_BT = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         stocktable = new javax.swing.JTable();
-        back_BT = new javax.swing.JButton();
+        back = new javax.swing.JMenuBar();
+        exit = new javax.swing.JMenu();
+        backmenu = new javax.swing.JMenuItem();
+        logout = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        showrecords = new javax.swing.JMenuItem();
+        printrecords = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("STOCK RECORDS");
@@ -122,24 +126,6 @@ public class RetrieveRecords extends javax.swing.JFrame {
             }
         });
 
-        records_BT.setBackground(new java.awt.Color(51, 204, 255));
-        records_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        records_BT.setText("SHOW RECORDS");
-        records_BT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                records_BTActionPerformed(evt);
-            }
-        });
-
-        print_BT.setBackground(new java.awt.Color(51, 204, 255));
-        print_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        print_BT.setText("PRINT RECORDS");
-        print_BT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                print_BTActionPerformed(evt);
-            }
-        });
-
         stocktable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -163,15 +149,6 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(stocktable);
 
-        back_BT.setBackground(new java.awt.Color(255, 51, 0));
-        back_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        back_BT.setText("BACK");
-        back_BT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                back_BTActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -185,14 +162,12 @@ public class RetrieveRecords extends javax.swing.JFrame {
                     .addComponent(quantity)
                     .addComponent(price)
                     .addComponent(update_BT)
-                    .addComponent(records_BT)
                     .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(74, 74, 74)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(search_BT)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(print_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(delete_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(delete_BT, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                         .addComponent(id_TF)
                         .addComponent(name_TF)
                         .addComponent(category_TF)
@@ -201,10 +176,6 @@ public class RetrieveRecords extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(201, 201, 201)
-                .addComponent(back_BT)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,16 +210,52 @@ public class RetrieveRecords extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(update_BT)
-                            .addComponent(delete_BT))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(records_BT)
-                            .addComponent(print_BT)))
+                            .addComponent(delete_BT)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(back_BT)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        exit.setText("Exit");
+
+        backmenu.setText("Back");
+        backmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backmenuActionPerformed(evt);
+            }
+        });
+        exit.add(backmenu);
+
+        logout.setText("Log Out");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        exit.add(logout);
+
+        back.add(exit);
+
+        jMenu1.setText("Records");
+
+        showrecords.setText("Show All Records");
+        showrecords.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showrecordsActionPerformed(evt);
+            }
+        });
+        jMenu1.add(showrecords);
+
+        printrecords.setText("Print Records");
+        printrecords.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printrecordsActionPerformed(evt);
+            }
+        });
+        jMenu1.add(printrecords);
+
+        back.add(jMenu1);
+
+        setJMenuBar(back);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -264,7 +271,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -273,14 +280,6 @@ public class RetrieveRecords extends javax.swing.JFrame {
     private void search_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_BTActionPerformed
         search();
     }//GEN-LAST:event_search_BTActionPerformed
-
-    private void records_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_records_BTActionPerformed
-        records();
-    }//GEN-LAST:event_records_BTActionPerformed
-
-    private void print_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_BTActionPerformed
-        printrecords();
-    }//GEN-LAST:event_print_BTActionPerformed
 
     private void stocktableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stocktableMouseClicked
         getrecords();
@@ -302,10 +301,24 @@ public class RetrieveRecords extends javax.swing.JFrame {
         
     }//GEN-LAST:event_search_TFActionPerformed
 
-    private void back_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_BTActionPerformed
+    private void backmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backmenuActionPerformed
         new InventoryApp().setVisible(true);
         dispose();
-    }//GEN-LAST:event_back_BTActionPerformed
+    }//GEN-LAST:event_backmenuActionPerformed
+
+    private void printrecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printrecordsActionPerformed
+        printrecords();
+    }//GEN-LAST:event_printrecordsActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        new Login().setVisible(true);
+        dispose();
+        JOptionPane.showMessageDialog(null, "Successully Logged Out");
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void showrecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showrecordsActionPerformed
+        records();
+    }//GEN-LAST:event_showrecordsActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
@@ -314,24 +327,28 @@ public class RetrieveRecords extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton back_BT;
+    private javax.swing.JMenuBar back;
+    private javax.swing.JMenuItem backmenu;
     private javax.swing.JLabel category;
     private javax.swing.JTextField category_TF;
     private javax.swing.JButton delete_BT;
+    private javax.swing.JMenu exit;
     private javax.swing.JLabel id;
     private javax.swing.JTextField id_TF;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem logout;
     private javax.swing.JLabel name;
     private javax.swing.JTextField name_TF;
     private javax.swing.JLabel price;
     private javax.swing.JTextField price_TF;
-    private javax.swing.JButton print_BT;
+    private javax.swing.JMenuItem printrecords;
     private javax.swing.JLabel quantity;
     private javax.swing.JTextField quantity_TF;
-    private javax.swing.JButton records_BT;
     private javax.swing.JButton search_BT;
     private javax.swing.JTextField search_TF;
+    private javax.swing.JMenuItem showrecords;
     private javax.swing.JTable stocktable;
     private javax.swing.JButton update_BT;
     // End of variables declaration//GEN-END:variables
