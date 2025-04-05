@@ -19,10 +19,13 @@ public class Login extends javax.swing.JFrame {
         password = new javax.swing.JLabel();
         idnumber_TF = new javax.swing.JTextField();
         login_BT = new javax.swing.JButton();
-        signup_BT = new javax.swing.JButton();
         password_PF = new javax.swing.JPasswordField();
-        exit_BT = new javax.swing.JButton();
         forgotpassword_BT = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        exit = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        signup = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN PAGE");
@@ -41,24 +44,6 @@ public class Login extends javax.swing.JFrame {
         login_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_BTActionPerformed(evt);
-            }
-        });
-
-        signup_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        signup_BT.setForeground(new java.awt.Color(102, 255, 0));
-        signup_BT.setText("SIGN UP");
-        signup_BT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signup_BTActionPerformed(evt);
-            }
-        });
-
-        exit_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        exit_BT.setForeground(new java.awt.Color(255, 0, 51));
-        exit_BT.setText("EXIT");
-        exit_BT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exit_BTActionPerformed(evt);
             }
         });
 
@@ -82,21 +67,15 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(idnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(password_PF, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                            .addComponent(idnumber_TF))
-                        .addContainerGap())
+                            .addComponent(idnumber_TF)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(exit_BT)
-                            .addComponent(signup_BT))
+                        .addComponent(forgotpassword_BT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(login_BT, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(forgotpassword_BT)
-                                .addContainerGap())))))
+                        .addComponent(login_BT)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,16 +88,38 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password)
                     .addComponent(password_PF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(login_BT)
-                    .addComponent(signup_BT))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(exit_BT)
-                    .addComponent(forgotpassword_BT))
-                .addContainerGap(51, Short.MAX_VALUE))
+                    .addComponent(forgotpassword_BT)
+                    .addComponent(login_BT))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("EXIT");
+
+        exit.setText("EXIT");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(exit);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("SIGN UP");
+
+        signup.setText("SIGN UP");
+        signup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signupActionPerformed(evt);
+            }
+        });
+        jMenu2.add(signup);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,20 +143,25 @@ public class Login extends javax.swing.JFrame {
 
     private void login_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_BTActionPerformed
         login();
+        idnumber_TF.setText("");
+        password_PF.setText("");
+        
+        
     }//GEN-LAST:event_login_BTActionPerformed
-
-    private void exit_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_BTActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exit_BTActionPerformed
-
-    private void signup_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_BTActionPerformed
-        SignUp signupwindow = new SignUp();
-        signupwindow.setVisible(true);
-    }//GEN-LAST:event_signup_BTActionPerformed
 
     private void forgotpassword_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotpassword_BTActionPerformed
         forgotpassword();
     }//GEN-LAST:event_forgotpassword_BTActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+        SignUp signupwindow = new SignUp();
+        signupwindow.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_signupActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
@@ -164,15 +170,18 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exit_BT;
+    private javax.swing.JMenuItem exit;
     private javax.swing.JButton forgotpassword_BT;
     private javax.swing.JLabel idnumber;
     private javax.swing.JTextField idnumber_TF;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_BT;
     private javax.swing.JLabel password;
     private javax.swing.JPasswordField password_PF;
-    private javax.swing.JButton signup_BT;
+    private javax.swing.JMenuItem signup;
     // End of variables declaration//GEN-END:variables
 
     //establish connection with mysql
@@ -195,7 +204,7 @@ public class Login extends javax.swing.JFrame {
             return;
         }
         try{
-            pdst = cn.prepareStatement("SELECT PASSWORD, ROLE FROM employeestb WHERE ID = ?");
+            pdst = cn.prepareStatement("SELECT PASSWORD, ROLE, USERNAME FROM employeestb WHERE ID = ?");
             pdst.setString(1, IDnumber);
             
             rs = pdst.executeQuery();
@@ -203,11 +212,13 @@ public class Login extends javax.swing.JFrame {
             if(rs.next()){
                 String storedHashedPassword = rs.getString("Password");
                 String userRole = rs.getString("ROLE");
+                String username = rs.getString("USERNAME");
                 String enteredHashedPassword = Passwords.hashPassword(Password);
                 //compare the two passwords
                 if (enteredHashedPassword.equals(storedHashedPassword)) {
                     if(userRole.equalsIgnoreCase("Administrator")){
-                        JOptionPane.showMessageDialog(null, "Login Successful!");
+                        JOptionPane.showMessageDialog(null, "Hello " + username);
+                        //JOptionPane.showMessageDialog(null, "Login Successful!");
                         InventoryApp inventory = new InventoryApp();
                         inventory.setVisible(true);
                         dispose();

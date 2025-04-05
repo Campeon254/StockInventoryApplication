@@ -215,9 +215,9 @@ public class RetrieveRecords extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        exit.setText("Exit");
+        exit.setText("EXIT");
 
-        backmenu.setText("Back");
+        backmenu.setText("BACK");
         backmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backmenuActionPerformed(evt);
@@ -225,7 +225,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
         exit.add(backmenu);
 
-        logout.setText("Log Out");
+        logout.setText("LOG OUT");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
@@ -235,9 +235,9 @@ public class RetrieveRecords extends javax.swing.JFrame {
 
         back.add(exit);
 
-        jMenu1.setText("Records");
+        jMenu1.setText("RECORDS");
 
-        showrecords.setText("Show All Records");
+        showrecords.setText("SHOW ALL RECORDS");
         showrecords.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showrecordsActionPerformed(evt);
@@ -245,7 +245,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
         jMenu1.add(showrecords);
 
-        printrecords.setText("Print Records");
+        printrecords.setText("PRINT RECORDS");
         printrecords.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printrecordsActionPerformed(evt);
@@ -392,6 +392,8 @@ public class RetrieveRecords extends javax.swing.JFrame {
         price_TF.setText((String)model.getValueAt(nrow, 4));
         
         id_TF.setEditable(false);
+        name_TF.setEditable(false);
+        category_TF.setEditable(false);
         
     }
 
