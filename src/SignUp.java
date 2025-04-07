@@ -53,7 +53,7 @@ public class SignUp extends javax.swing.JFrame {
         confirm_password.setText("CONFIRM PASSWORD:");
 
         signup_BT.setBackground(new java.awt.Color(102, 255, 0));
-        signup_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        signup_BT.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         signup_BT.setText("SIGN UP");
         signup_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +64,7 @@ public class SignUp extends javax.swing.JFrame {
         role.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         role.setText("ROLE:");
 
+        role_CB.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         role_CB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Accountant", "Auditor", "Sales Manager", "Human Resource", "Administrator", " " }));
         role_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +76,7 @@ public class SignUp extends javax.swing.JFrame {
         GENDER.setText("GENDER:");
 
         buttonGroup1.add(male);
+        male.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         male.setText("MALE");
         male.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +85,7 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(female);
+        female.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         female.setText("FEMALE");
         female.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,8 +165,9 @@ public class SignUp extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jMenu1.setText("EXIT");
+        jMenu1.setText("OPTIONS");
 
+        back.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +176,13 @@ public class SignUp extends javax.swing.JFrame {
         });
         jMenu1.add(back);
 
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         jMenuItem1.setText("EXIT");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -227,6 +237,10 @@ public class SignUp extends javax.swing.JFrame {
             txtgender=female.getText();
         }
     }//GEN-LAST:event_femaleActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {

@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Cursor;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -21,11 +23,11 @@ public class Login extends javax.swing.JFrame {
         login_BT = new javax.swing.JButton();
         password_PF = new javax.swing.JPasswordField();
         forgotpassword_BT = new javax.swing.JButton();
+        message1 = new javax.swing.JLabel();
+        Signup_BT = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         exit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        signup = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN PAGE");
@@ -38,21 +40,29 @@ public class Login extends javax.swing.JFrame {
         password.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         password.setText("PASSWORD:");
 
-        login_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        login_BT.setForeground(new java.awt.Color(255, 0, 51));
+        login_BT.setBackground(new java.awt.Color(102, 255, 51));
+        login_BT.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         login_BT.setText("LOGIN");
+        login_BT.setBorder(new javax.swing.border.MatteBorder(null));
         login_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_BTActionPerformed(evt);
             }
         });
 
-        forgotpassword_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        forgotpassword_BT.setForeground(new java.awt.Color(102, 255, 0));
-        forgotpassword_BT.setText("FORGOT PASSWORD?");
+        forgotpassword_BT.setText("Forgot Password?");
         forgotpassword_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 forgotpassword_BTActionPerformed(evt);
+            }
+        });
+
+        message1.setText("Don't have an account?");
+
+        Signup_BT.setText("Sign up");
+        Signup_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Signup_BTActionPerformed(evt);
             }
         });
 
@@ -66,15 +76,18 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                            .addComponent(idnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(forgotpassword_BT))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(password_PF, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                            .addComponent(idnumber_TF)))
+                            .addComponent(idnumber_TF)
+                            .addComponent(login_BT, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(forgotpassword_BT)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(login_BT)))
+                        .addComponent(message1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Signup_BT)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -88,15 +101,29 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password)
                     .addComponent(password_PF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(forgotpassword_BT)
-                    .addComponent(login_BT))
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(login_BT)
+                    .addComponent(forgotpassword_BT))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(message1)
+                    .addComponent(Signup_BT))
+                .addGap(20, 20, 20))
         );
 
-        jMenu1.setText("EXIT");
+        forgotpassword_BT.setBorderPainted(false);
+        forgotpassword_BT.setContentAreaFilled(false);
+        forgotpassword_BT.setForeground(Color.BLUE);
+        forgotpassword_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        Signup_BT.setBorderPainted(false);
+        Signup_BT.setContentAreaFilled(false);
+        Signup_BT.setForeground(Color.BLUE);
+        Signup_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
+        jMenu1.setText("OPTIONS");
+
+        exit.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         exit.setText("EXIT");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,18 +133,6 @@ public class Login extends javax.swing.JFrame {
         jMenu1.add(exit);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("SIGN UP");
-
-        signup.setText("SIGN UP");
-        signup.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signupActionPerformed(evt);
-            }
-        });
-        jMenu2.add(signup);
-
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -151,17 +166,17 @@ public class Login extends javax.swing.JFrame {
 
     private void forgotpassword_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotpassword_BTActionPerformed
         forgotpassword();
+        dispose();
     }//GEN-LAST:event_forgotpassword_BTActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitActionPerformed
 
-    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-        SignUp signupwindow = new SignUp();
-        signupwindow.setVisible(true);
+    private void Signup_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Signup_BTActionPerformed
+        new SignUp().setVisible(true);
         dispose();
-    }//GEN-LAST:event_signupActionPerformed
+    }//GEN-LAST:event_Signup_BTActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
@@ -170,18 +185,18 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Signup_BT;
     private javax.swing.JMenuItem exit;
     private javax.swing.JButton forgotpassword_BT;
     private javax.swing.JLabel idnumber;
     private javax.swing.JTextField idnumber_TF;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_BT;
+    private javax.swing.JLabel message1;
     private javax.swing.JLabel password;
     private javax.swing.JPasswordField password_PF;
-    private javax.swing.JMenuItem signup;
     // End of variables declaration//GEN-END:variables
 
     //establish connection with mysql

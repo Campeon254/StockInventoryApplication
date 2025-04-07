@@ -27,9 +27,8 @@ public class InventoryApp extends javax.swing.JFrame {
         category_CB = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         logout = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        records = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("STOCK INVENTORY");
@@ -51,8 +50,8 @@ public class InventoryApp extends javax.swing.JFrame {
         price.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         price.setText("PRODUCT PRICE:");
 
-        submit_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        submit_BT.setForeground(new java.awt.Color(102, 255, 51));
+        submit_BT.setBackground(new java.awt.Color(51, 255, 51));
+        submit_BT.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         submit_BT.setText("SUBMIT");
         submit_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,8 +59,8 @@ public class InventoryApp extends javax.swing.JFrame {
             }
         });
 
-        clear_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
-        clear_BT.setForeground(new java.awt.Color(255, 51, 51));
+        clear_BT.setBackground(new java.awt.Color(255, 0, 0));
+        clear_BT.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         clear_BT.setText("CLEAR");
         clear_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +68,7 @@ public class InventoryApp extends javax.swing.JFrame {
             }
         });
 
+        category_CB.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         category_CB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Other", "Food&Beverage", "Phones&Tablets", "TV's&Audio", "Appliances", "Health&Beauty", "Home&Office", "Fashion", "Computing&Gaming", " " }));
         category_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,19 +85,18 @@ public class InventoryApp extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(quantity)
                     .addComponent(price)
-                    .addComponent(submit_BT)
                     .addComponent(name)
                     .addComponent(category)
-                    .addComponent(id))
+                    .addComponent(id)
+                    .addComponent(clear_BT))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(id_TF)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(quantity_TF)
-                        .addComponent(price_TF)
-                        .addComponent(clear_BT, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(name_TF)
-                        .addComponent(category_CB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(quantity_TF)
+                    .addComponent(price_TF)
+                    .addComponent(name_TF)
+                    .addComponent(category_CB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(submit_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -123,15 +122,25 @@ public class InventoryApp extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(price)
                     .addComponent(price_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(submit_BT)
-                    .addComponent(clear_BT))
-                .addContainerGap(104, Short.MAX_VALUE))
+                    .addComponent(clear_BT)
+                    .addComponent(submit_BT))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("EXIT");
+        jMenu1.setText("OPTIONS");
 
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jMenuItem1.setText("RETRIEVE RECORDS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        logout.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         logout.setText("LOG OUT");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,18 +150,6 @@ public class InventoryApp extends javax.swing.JFrame {
         jMenu1.add(logout);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("RECORDS");
-
-        records.setText("RETRIEVE RECORDS");
-        records.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recordsActionPerformed(evt);
-            }
-        });
-        jMenu2.add(records);
-
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -183,7 +180,6 @@ public class InventoryApp extends javax.swing.JFrame {
     private void submit_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_BTActionPerformed
         try {
             submit();
-            JOptionPane.showMessageDialog(null, "Data Stored Successfully");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
@@ -198,10 +194,10 @@ public class InventoryApp extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
-    private void recordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordsActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         new RetrieveRecords().setVisible(true);
         dispose();
-    }//GEN-LAST:event_recordsActionPerformed
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
@@ -216,8 +212,8 @@ public class InventoryApp extends javax.swing.JFrame {
     private javax.swing.JLabel id;
     private javax.swing.JTextField id_TF;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem logout;
     private javax.swing.JLabel name;
@@ -226,7 +222,6 @@ public class InventoryApp extends javax.swing.JFrame {
     private javax.swing.JTextField price_TF;
     private javax.swing.JLabel quantity;
     private javax.swing.JTextField quantity_TF;
-    private javax.swing.JMenuItem records;
     private javax.swing.JButton submit_BT;
     // End of variables declaration//GEN-END:variables
 
@@ -241,16 +236,28 @@ public class InventoryApp extends javax.swing.JFrame {
     }
 
     private void submit() throws SQLException {
-        // prepared statement
-        PreparedStatement pst = cn.prepareStatement("INSERT INTO stockinventorytb VALUES(?, ?, ?, ?, ?)");
-        pst.setString(1, id_TF.getText());
-        pst.setString(2, name_TF.getText());
-        pst.setString(3, String.valueOf(txtcategory));
-        pst.setInt(4, Integer.parseInt(quantity_TF.getText()));
-        pst.setDouble(5, Double.parseDouble(price_TF.getText())); 
+        String id = id_TF.getText();
+        String name = name_TF.getText();
+        String quantity = quantity_TF.getText();
+        String price = price_TF.getText();
         
-        pst.execute();        
-        clear();
+        if(id.isEmpty()||name.isEmpty()||quantity.isEmpty()||price.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Please fill in all fields", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else{
+            // prepared statement
+            PreparedStatement pst = cn.prepareStatement("INSERT INTO stockinventorytb VALUES(?, ?, ?, ?, ?)");
+            pst.setString(1, id_TF.getText());
+            pst.setString(2, name_TF.getText());
+            pst.setString(3, String.valueOf(txtcategory));
+            pst.setInt(4, Integer.parseInt(quantity_TF.getText()));
+            pst.setDouble(5, Double.parseDouble(price_TF.getText())); 
+
+            pst.execute();        
+            clear();
+            JOptionPane.showMessageDialog(null, "Data Stored Successfully");
+        }        
+        
     }
 
     private void clear() {

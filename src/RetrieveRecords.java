@@ -59,6 +59,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
         delete_BT = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         stocktable = new javax.swing.JTable();
+        refresh_BT = new javax.swing.JButton();
         back = new javax.swing.JMenuBar();
         exit = new javax.swing.JMenu();
         backmenu = new javax.swing.JMenuItem();
@@ -109,7 +110,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
 
         update_BT.setBackground(new java.awt.Color(102, 255, 102));
-        update_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        update_BT.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         update_BT.setText("UPDATE");
         update_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +119,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
 
         delete_BT.setBackground(new java.awt.Color(255, 51, 0));
-        delete_BT.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
+        delete_BT.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         delete_BT.setText("DELETE");
         delete_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +150,15 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(stocktable);
 
+        refresh_BT.setBackground(new java.awt.Color(153, 255, 255));
+        refresh_BT.setFont(new java.awt.Font("Snap ITC", 0, 18)); // NOI18N
+        refresh_BT.setText("REFRESH");
+        refresh_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refresh_BTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -163,19 +173,21 @@ public class RetrieveRecords extends javax.swing.JFrame {
                     .addComponent(price)
                     .addComponent(update_BT)
                     .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(search_BT)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(delete_BT, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                         .addComponent(id_TF)
                         .addComponent(name_TF)
                         .addComponent(category_TF)
                         .addComponent(quantity_TF)
-                        .addComponent(price_TF)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addComponent(price_TF))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(search_BT, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(refresh_BT, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,14 +195,14 @@ public class RetrieveRecords extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(search_BT))
-                                .addGap(26, 26, 26)
-                                .addComponent(id))
-                            .addComponent(id_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(search_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(search_BT)
+                            .addComponent(refresh_BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(id, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(id_TF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(name)
@@ -212,11 +224,12 @@ public class RetrieveRecords extends javax.swing.JFrame {
                             .addComponent(update_BT)
                             .addComponent(delete_BT)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
-        exit.setText("EXIT");
+        exit.setText("OPTIONS");
 
+        backmenu.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         backmenu.setText("BACK");
         backmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +238,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
         exit.add(backmenu);
 
+        logout.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         logout.setText("LOG OUT");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,6 +251,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
 
         jMenu1.setText("RECORDS");
 
+        showrecords.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         showrecords.setText("SHOW ALL RECORDS");
         showrecords.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,6 +260,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
         });
         jMenu1.add(showrecords);
 
+        printrecords.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         printrecords.setText("PRINT RECORDS");
         printrecords.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,15 +279,15 @@ public class RetrieveRecords extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -320,6 +336,11 @@ public class RetrieveRecords extends javax.swing.JFrame {
         records();
     }//GEN-LAST:event_showrecordsActionPerformed
 
+    private void refresh_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresh_BTActionPerformed
+        myconnection();
+        records();
+    }//GEN-LAST:event_refresh_BTActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new RetrieveRecords().setVisible(true);
@@ -346,6 +367,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
     private javax.swing.JMenuItem printrecords;
     private javax.swing.JLabel quantity;
     private javax.swing.JTextField quantity_TF;
+    private javax.swing.JButton refresh_BT;
     private javax.swing.JButton search_BT;
     private javax.swing.JTextField search_TF;
     private javax.swing.JMenuItem showrecords;
