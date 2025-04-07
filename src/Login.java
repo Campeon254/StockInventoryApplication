@@ -115,11 +115,11 @@ public class Login extends javax.swing.JFrame {
         forgotpassword_BT.setBorderPainted(false);
         forgotpassword_BT.setContentAreaFilled(false);
         forgotpassword_BT.setForeground(Color.BLUE);
-        forgotpassword_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        //forgotpassword_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         Signup_BT.setBorderPainted(false);
         Signup_BT.setContentAreaFilled(false);
         Signup_BT.setForeground(Color.BLUE);
-        Signup_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        //Signup_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         jMenu1.setText("OPTIONS");
 
@@ -148,9 +148,8 @@ public class Login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();

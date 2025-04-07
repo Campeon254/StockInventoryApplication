@@ -462,6 +462,7 @@ public class RetrieveRecords extends javax.swing.JFrame {
     }
 
     private void delete() {
+        
         int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this record", "This action cannot be undone", JOptionPane.YES_NO_OPTION);
         if(confirm == JOptionPane.YES_OPTION){
             try {

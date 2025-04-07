@@ -59,9 +59,8 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -180,7 +179,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forgotpassword_BTActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="forgotpassword_BT.setBorderPainted(false);&#xa;forgotpassword_BT.setContentAreaFilled(false);&#xa;forgotpassword_BT.setForeground(Color.BLUE);&#xa;forgotpassword_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="forgotpassword_BT.setBorderPainted(false);&#xa;forgotpassword_BT.setContentAreaFilled(false);&#xa;forgotpassword_BT.setForeground(Color.BLUE);&#xa;//forgotpassword_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="message1">
@@ -196,7 +195,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Signup_BTActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="Signup_BT.setBorderPainted(false);&#xa;        Signup_BT.setContentAreaFilled(false);&#xa;        Signup_BT.setForeground(Color.BLUE);&#xa;        Signup_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="Signup_BT.setBorderPainted(false);&#xa;Signup_BT.setContentAreaFilled(false);&#xa;Signup_BT.setForeground(Color.BLUE);&#xa;//Signup_BT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));"/>
           </AuxValues>
         </Component>
       </SubComponents>
